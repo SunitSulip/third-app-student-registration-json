@@ -8,6 +8,7 @@ import { FormComponent } from './form/form.component';
 import { CardComponent } from './card/card.component';
 import { RateComponent } from './rate/rate.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NavbarComponent } from './navbar/navbar.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

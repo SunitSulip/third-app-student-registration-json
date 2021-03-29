@@ -9,16 +9,44 @@
                 Rating:4.5
             </div>
         </div>
-        <div class="card-body">
-            <label for="name">Name:-</label>
-            <input type="text">
-    
-            <app-rate>
-                <!-- //rating component  -->
-            </app-rate>
-        </div>
-        <div class="card-footer">
-            <button type="button">Submit</button>
-        </div>
+        <form action="" >
+            <div class="card-body">
+                <div class="form-group">
+                    <div class="star">
+                        <label for="name">Name:-</label>
+                        <input class="form-control" clas type="text" name="name" id="name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="star">
+                        <label for="rollNo">Roll No.-</label>
+                        <input class="form-control" type="number" name="rollNo" id="rollNo">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="star">
+                        <label for="gender">Gender:-</label>
+                        <input class="form-check form-check-inline" type="radio" name="genter" id="male" value="male"><label for="male">Male</label>
+                        <input class="form-check form-check-inline" type="radio" name="genter" id="female" value="female"><label for="female">Female</label>
+                        <input class="form-check form-check-inline" type="radio" name="genter" id="others" value="others"><label for="others">Others</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="star">
+                        <label for="percentage">Percentage</label>
+                        <input class="form-control" type="number" name="percentage" id="percentage">
+                    </div>
+                </div>
+                
+                
+                
+                
+                <app-rate></app-rate>
+            </div>
+            <div class="card-footer center">
+                <button class="btn btn-primary" type="button">Submit</button>
+            </div>
+        </form>
+        
     </div>
 </div>
