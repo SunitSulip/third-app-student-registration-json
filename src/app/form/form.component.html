@@ -3,45 +3,62 @@
     <div class="card">
         <div class="card-header">
             <div>
-                Student name
+                <span *ngIf="studentForm.get('name').pristine">Student Name</span>
+                <span *ngIf="studentForm.get('name').dirty">{{studentForm.get('name').value}}'s Form</span>
             </div>
             <div style="text-align: right;">
-                Rating:4.5
+                Rating:{{studentForm.get('rating').value}}
             </div>
         </div>
-        <form action="" >
+        <form action="" [formGroup]="studentForm">
             <div class="card-body">
                 <div class="form-group">
                     <div class="star">
                         <label for="name">Name:-</label>
-                        <input class="form-control" clas type="text" name="name" id="name">
+                    </div>
+                        <input [class.is-invalid]="studentForm.get('name').invalid && studentForm.get('name').touched" formControlName="name" class="form-control" clas type="text" name="name" id="name">
+                    
+                    <div *ngIf="studentForm.get('name').invalid && studentForm.get('name').touched">
+                        <small class="text-danger">Please Fill the Name</small> 
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="star">
                         <label for="rollNo">Roll No.-</label>
-                        <input class="form-control" type="number" name="rollNo" id="rollNo">
+                    </div>
+                        <input [class.is-invalid]="studentForm.get('rollNo').invalid && studentForm.get('rollNo').touched" formControlName="rollNo" class="form-control" type="number" name="rollNo" id="rollNo">
+                    
+                    <div *ngIf="studentForm.get('rollNo').invalid && studentForm.get('rollNo').touched">
+                        <small class="text-danger">Please Fill the Roll no.</small> 
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="star">
                         <label for="gender">Gender:-</label>
-                        <input class="form-check form-check-inline" type="radio" name="genter" id="male" value="male"><label for="male">Male</label>
-                        <input class="form-check form-check-inline" type="radio" name="genter" id="female" value="female"><label for="female">Female</label>
-                        <input class="form-check form-check-inline" type="radio" name="genter" id="others" value="others"><label for="others">Others</label>
+                    </div>
+                        <input formControlName="gender" class="form-check form-check-inline" type="radio" name="genter" id="male" value="male"><label for="male">Male</label>
+                        <input formControlName="gender" class="form-check form-check-inline" type="radio" name="genter" id="female" value="female"><label for="female">Female</label>
+                        <input formControlName="gender" class="form-check form-check-inline" type="radio" name="genter" id="others" value="others"><label for="others">Others</label>
+                    
+                    <div *ngIf="studentForm.get('gender').invalid && studentForm.get('gender').touched">
+                        <small class="text-danger">Please Fill the gender</small> 
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="star">
                         <label for="percentage">Percentage</label>
-                        <input class="form-control" type="number" name="percentage" id="percentage">
+                    </div>
+                        <input [class.is-invalid]="studentForm.get('percentage').invalid && studentForm.get('percentage').touched" formControlName="percentage" class="form-control" type="number" name="percentage" id="percentage">
+                    
+                    <div *ngIf="studentForm.get('percentage').invalid && studentForm.get('percentage').touched">
+                        <small class="text-danger">Please Fill the Gender</small> 
                     </div>
                 </div>
                 
                 
                 
                 
-                <app-rate></app-rate>
+                <app-rate (newItemEvent)="addItem($event)"></app-rate>
             </div>
             <div class="card-footer center">
                 <button class="btn btn-primary" type="button">Submit</button>

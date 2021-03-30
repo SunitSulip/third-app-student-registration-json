@@ -1,3 +1,10 @@
 .center{
     text-align: center;
 }
+.star::after{
+    content: "*";
+    color: red;
+}
+.form-check{
+    margin: 2%;
+}
