@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
+import { Student } from '../student.model';
+
 
 @Component({
   selector: 'app-display',
@@ -6,10 +9,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./display.component.css']
 })
 export class DisplayComponent implements OnInit {
-
-  constructor() { }
+  student: Student[];
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
+   
+   this.display();
+  }
+
+  display(){
+    this.dataService.getStudents()
+    .subscribe(
+      data => {
+        this.student = data;
+      }
+    )
   }
 
 }

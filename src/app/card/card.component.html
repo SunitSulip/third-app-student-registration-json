@@ -1,6 +1,6 @@
-<div class="card border-primary">
-    <div class="card-body">
-        <h4>Name:-</h4>
-        <h4>Roll no.</h4>
+<div class="card border-primary" *ngFor="let st of parentData">
+    <div class="card-body" >
+        <h4>Name:-</h4><span>{{st.name}}</span>
+        <h4>Roll no.</h4><span>{{st.rollNo}}</span>
     </div>
 </div>
