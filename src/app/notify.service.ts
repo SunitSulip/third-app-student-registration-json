@@ -19,11 +19,12 @@ export class NotifyService {
   rating$ = this.rating.asObservable();
 
   constructor() { }
-
+  //send message to notification component
   sendMessage(information: any){
     this.message.next(information);
 
   }
+  //send details to form component
   sendDetails(name: string,rollNo: any,gender:string,rating: number){
     this.name.next(name);
     this.rollNo.next(rollNo);

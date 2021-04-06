@@ -13,20 +13,14 @@ export class DisplayComponent implements OnInit {
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
-   
-   this.display();
-  //  if(this.dataService.status()==false)
-  }
   
-  
-
-  display(){
     this.dataService.getStudents()
     .subscribe(
       data => {
         this.student = data;
       }
     )
+
   }
 
 }

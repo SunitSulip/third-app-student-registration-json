@@ -13,16 +13,13 @@ export class DataService {
 
   private message = new Subject();
   message$ = this.message.asObservable();
-
+//to get all students in the display component
   getStudents() : Observable<any> {
     return (this._http.get('http://localhost:3000/students'))
   }
-
+//to post the student details  to the json from form
   postStudent(student: any){
-    return this._http.post('http://localhost:3000/students',student).subscribe((result)=>{ 
-    console.warn("result",result);  
-    
-  });
+    return this._http.post('http://localhost:3000/students',student);
   }
  
 

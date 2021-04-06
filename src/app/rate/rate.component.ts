@@ -7,14 +7,13 @@ import { NotifyService } from '../notify.service';
   templateUrl: './rate.component.html',
   styleUrls: ['./rate.component.css']
 })
-// @Output() newItemEvent = new EventEmitter<string>();
 export class RateComponent implements OnInit {
 
   constructor(private notifyService:NotifyService) { }
 
   ngOnInit(): void {
   }
-
+//transfering the rating value to form component
   @Output() newItemEvent = new EventEmitter<string>();
 
   addNewItem(value: string) {
