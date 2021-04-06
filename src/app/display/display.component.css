@@ -5,3 +5,9 @@
 .container::-webkit-scrollbar {
     display: none;
   }
+.center{
+    text-align: center;
+}
+.card-body{
+    background-color: rgb(234, 248, 250);
+}

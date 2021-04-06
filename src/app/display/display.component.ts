@@ -15,7 +15,10 @@ export class DisplayComponent implements OnInit {
   ngOnInit(): void {
    
    this.display();
+  //  if(this.dataService.status()==false)
   }
+  
+  
 
   display(){
     this.dataService.getStudents()

@@ -1,6 +1,20 @@
 <div class="card border-primary" *ngFor="let st of parentData">
-    <div class="card-body" >
-        <h4>Name:-</h4><span>{{st.name}}</span>
-        <h4>Roll no.</h4><span>{{st.rollNo}}</span>
+    <div class="card-body" (click)="onclick()">
+        <div class="row">
+            <div class="col-sm-10">
+                <span class="h4">Name:-</span><span>{{st.name}}</span>
+                <br>
+                <span class="h4">Roll No:-</span><span>{{st.rollNo}}</span>
+            </div>
+            <div class="col-sm-2">
+                <div class="align-top">
+                    <button class="btn btn-link" type="button" (click)="onEdit(st.name,st.rollNo,st.gender,st.rating)">Edit</button>
+                </div>
+
+            </div>
+        </div>
+        
+        
+        
     </div>
 </div>

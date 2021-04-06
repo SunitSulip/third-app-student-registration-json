@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NotifyService } from '../notify.service';
 
 @Component({
   selector: 'app-notificaton',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./notificaton.component.css']
 })
 export class NotificatonComponent implements OnInit {
+    constructor(private notifyService: NotifyService) { }
 
-  constructor() { }
+    displayMessage: any = "Hey there"
+
 
   ngOnInit(): void {
+    this.notifyService.message$
+    .subscribe(message =>(this.displayMessage=message))
   }
 
 }

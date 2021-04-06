@@ -71,6 +71,22 @@
       "percentage": 78,
       "rating": "5",
       "id": 9
+    },
+    {
+      "name": "yup",
+      "gender": "female",
+      "rollNo": 10,
+      "percentage": 96,
+      "rating": "3",
+      "id": 10
+    },
+    {
+      "name": "noob",
+      "gender": "male",
+      "rollNo": 12,
+      "percentage": 45,
+      "rating": "1",
+      "id": 11
     }
   ]
 }

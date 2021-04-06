@@ -1,5 +1,6 @@
 .center{
     text-align: center;
+    margin-top: 5%;
 }
 .star::after{
     content: "*";
@@ -7,4 +8,10 @@
 }
 .form-check{
     margin: 2%;
+}
+.card-body{
+    background-color: rgb(234, 248, 250);
+}
+.btn{
+    width: 40%;
 }

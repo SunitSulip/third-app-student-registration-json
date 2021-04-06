@@ -1,14 +1,22 @@
 
 <div class="container">
-    <div class="card">
+    <div class="card ">
         <div class="card-header">
-            <div>
-                <span *ngIf="studentForm.get('name').pristine">Student Name</span>
-                <span *ngIf="studentForm.get('name').dirty">{{studentForm.get('name').value}}'s Form</span>
-            </div>
             
-            <div style="text-align: right;">
-                Rating:{{studentForm.get('rating').value}}
+            
+            
+            <div class="row">
+                <div class="col-sm-8">
+                    <div>
+                        <span class="h4" *ngIf="studentForm.get('name').value==''">Student Name</span>
+                        <span class="h4" *ngIf="studentForm.get('name').value!=''">{{studentForm.get('name').value}}'s Form</span>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="h4"  style="text-align: right;">
+                        Rating:{{studentForm.get('rating').value}}
+                    </div>
+                </div>
             </div>
         </div>
         <form action="" [formGroup]="studentForm" (ngSubmit)="onSubmit(studentForm.value)" novalidate>
@@ -17,7 +25,7 @@
                     <div class="star">
                         <label for="name">Name:-</label>
                     </div>
-                        <input [class.is-invalid]="studentForm.get('name').invalid && studentForm.get('name').touched" formControlName="name" class="form-control" clas type="text" name="name" id="name">
+                        <input [class.is-invalid]="studentForm.get('name').invalid && studentForm.get('name').touched" formControlName="name" class="form-control" clas type="text" name="name" [value]="name" id="name">
                     
                     <div *ngIf="studentForm.get('name').invalid && studentForm.get('name').touched">
                         <small class="text-danger">Please Fill the Name</small> 
@@ -27,7 +35,7 @@
                     <div class="star">
                         <label for="rollNo">Roll No.-</label>
                     </div>
-                        <input [class.is-invalid]="studentForm.get('rollNo').invalid && studentForm.get('rollNo').touched" formControlName="rollNo" class="form-control" type="number" name="rollNo" id="rollNo">
+                        <input [(value)]="rollNo" [class.is-invalid]="studentForm.get('rollNo').invalid && studentForm.get('rollNo').touched" formControlName="rollNo" class="form-control" type="number" name="rollNo" id="rollNo">
                     
                     <div *ngIf="studentForm.get('rollNo').invalid && studentForm.get('rollNo').touched">
                         <small class="text-danger">Please Fill the Roll no.</small> 
@@ -37,9 +45,9 @@
                     <div class="star">
                         <label for="gender">Gender:-</label>
                     </div>
-                        <input formControlName="gender" class="form-check form-check-inline" type="radio" name="gender" id="male" value="male"><label for="male">Male</label>
-                        <input formControlName="gender" class="form-check form-check-inline" type="radio" name="gender" id="female" value="female"><label for="female">Female</label>
-                        <input formControlName="gender" class="form-check form-check-inline" type="radio" name="gender" id="others" value="others"><label for="others">Others</label>
+                        <input  formControlName="gender" class="form-check form-check-inline" type="radio" name="gender" id="male" value="male"><label for="male">Male</label>
+                        <input  formControlName="gender" class="form-check form-check-inline" type="radio" name="gender" id="female" value="female"><label for="female">Female</label>
+                        <input  formControlName="gender" class="form-check form-check-inline" type="radio" name="gender" id="others" value="others"><label for="others">Others</label>
                     
                     <div *ngIf="studentForm.get('gender').invalid && studentForm.get('gender').touched">
                         <small class="text-danger">Please Fill the gender</small> 
@@ -52,7 +60,7 @@
                         <input [class.is-invalid]="studentForm.get('percentage').invalid && studentForm.get('percentage').touched" formControlName="percentage" class="form-control" type="number" name="percentage" id="percentage">
                     
                     <div *ngIf="studentForm.get('percentage').invalid && studentForm.get('percentage').touched">
-                        <small class="text-danger">Please Fill the Gender</small> 
+                        <small class="text-danger">Please fill the percentage</small> 
                     </div>
                 </div>
                 
@@ -60,10 +68,11 @@
                 
                 
                 <app-rate (newItemEvent)="addItem($event)"></app-rate>
+                <div class="center">
+                    <button class="btn btn-primary" [disabled]="studentForm.invalid" type="submit">Submit</button>
+                </div>
             </div>
-            <div class="card-footer center">
-                <button class="btn btn-primary" [disabled]="studentForm.invalid" type="submit">Submit</button>
-            </div>
+            
         </form>
         
     </div>
